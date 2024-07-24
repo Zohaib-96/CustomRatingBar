@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ratingbar</string>
+
+        <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+            <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+            <item name="android:minHeight">55dp</item>
+            <item name="android:maxHeight">55dp</item>
+        </style>
+</resources>
+
+
+

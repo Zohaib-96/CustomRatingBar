@@ -1,0 +1,53 @@
+
+
+1: highlighted.png + un_highlighted.png: ->
+includes image resources for full and empty Stars icons
+
+
+2: made a files, custom_ratingbar.xml.
+See the below code and file in the drawable
+
+            <?xml version="1.0" encoding="utf-8"?>
+
+                <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <!-- Empty heart for background -->
+                        <item android:id="@android:id/background"
+                         android:drawable="@drawable/un_highlighted_star" />
+
+                <!-- Full heart for progress -->
+                        <item android:id="@android:id/progress"
+                        android:drawable="@drawable/highlighted_star" />
+                </layer-list>
+
+
+4: inside value file val/strings.xml
+                 <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+                       <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+                       <item name="android:minHeight">75dp</item>
+                       <item name="android:maxHeight">85dp</item>
+                 </style>
+
+
+
+5: The Layout XML ratingbar_layout.xml :
+
+                 <?xml version="1.0" encoding="utf-8"?>
+                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     xmlns:tools="http://schemas.android.com/tools"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+
+                     <RatingBar
+                         android:id="@+id/dialogRatingBar"
+                         style="@style/CustomRatingBar"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:numStars="5"
+                         android:stepSize="0.5"
+                         tools:layout_editor_absoluteX="16dp"
+                         tools:layout_editor_absoluteY="16dp" />
+
+                 </LinearLayout>
+
